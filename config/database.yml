@@ -23,6 +23,9 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
+  username: quick_survey_db_admin
+  password: $Un!c0rn$
   database: QuickSurvey_development
 
   # The specified database role being used to connect to postgres.
