@@ -22,3 +22,8 @@ Survey.create(title: "Survey on Bangalore Traffic", status: 0)
 Question.create(title: "What is your take on recent fuel prices?", survey_id: 1)
 Question.create(title: "What is your take on SC declaring section 377 unconstitutional?", survey_id: 2)
 Question.create(title: "What is your take on Bangalore Traffic?", survey_id: 3)
+
+#create survey responses
+SurveyResponse.create(feedback: "Good Survey", rating: 0, survey_id: 1, feedback_given_by: "Pavan")
+SurveyResponse.create(feedback: "Great Survey", rating: 0, survey_id: 2, feedback_given_by: "Vasu")
+SurveyResponse.create(feedback: "Excellent Survey", rating: 0, survey_id: 3, feedback_given_by: "Ganga")
