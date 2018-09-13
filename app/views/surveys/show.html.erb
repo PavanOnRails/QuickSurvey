@@ -1,0 +1,75 @@
+<br><br>
+<div class="container">
+	<table style="width:100%" border="2">
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Status</th>
+	      <th>Actions</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <tr>
+	      <td><%= @survey.title %></td>
+	      <td><%= @survey.status.titleize %></td>
+	      <td>
+	        <%= link_to "Edit Survey", edit_survey_path(@survey), class: "btn btn-primary btn-sm" %>&nbsp;&nbsp;
+	        <%= link_to "Delete Survey", survey_path(@survey), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm" %>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+  <br>
+  <h3 class="text-center">Questions</h3>
+  <div class="pull-left">
+  	<%= link_to "Add new question", new_survey_question_path(@survey), class: "btn btn-primary btn-sm" %>
+  </div>
+  <table style="width:100%" border="2">
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Actions</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+    	<% @survey.questions.each do |question| %>
+    	  <tr>
+		      <td><%= question.title %></td>
+		      <td>
+		        <%= link_to "Edit Question", edit_survey_question_path(@survey, question), class: "btn btn-primary btn-sm" %>&nbsp;&nbsp;
+		        <%= link_to "Delete Question", survey_question_path(@survey, question), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm" %>
+		      </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+  <br>
+  <h3 class="text-center">Survey Responses</h3>
+  <table style="width:100%" border="2">
+	  <thead>
+	    <tr>
+	      <th>Rating</th>
+	      <th>Feedback</th>
+	      <th>Given By</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+    	<% @survey.survey_responses.each do |sr| %>
+    	  <tr>
+		      <td><%= sr.rating.humanize.titleize %></td>
+		      <td><%= sr.feedback %></td>
+		      <td><%= sr.feedback_given_by %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+  <br>
+	<div class="pull-left">
+		<%= link_to survey_admin_dashboard_path(current_user), title: "Back", data: { "toggle" => "tooltip", 'placement' => "top", turbolinks: false} do %>
+		  <i class="fa fa-chevron-left" aria-hidden="true" style="font-size: 20px;"></i>
+		<% end %>
+	</div>
+</div>

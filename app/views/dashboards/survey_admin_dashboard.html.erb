@@ -1,9 +1,6 @@
 <!-- page content -->
+ <br><br>
 <div class="container">
-  <% flash.each do |key, value| %>
-    <div class="flash-message text-center"><%= value %></div>
-  <% end %>
-  <br><br>
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<div class="pull-left">
@@ -31,7 +28,7 @@
               <td>
                 <%= link_to "View Survey", survey_path(survey), class: "btn btn-primary btn-sm" %>&nbsp;&nbsp;
                 <%= link_to "Edit Survey", edit_survey_path(survey), class: "btn btn-primary btn-sm" %>&nbsp;&nbsp;
-                <%= link_to "Delete Survey", survey_path(survey), method: :delete, class: "btn btn-primary btn-sm" %>
+                <%= link_to "Delete Survey", survey_path(survey), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm" %>
               </td>
             </tr>
           <% end %>

@@ -1,0 +1,15 @@
+<%= form_for(survey) do |f| %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: "Title" %>
+      </div>
+      <div class="col">
+      	<%= f.select :status, Survey.statuses.map { |key, value| [key.humanize, key] }, { include_blank: true }, class: 'form-control', style:"width:100%;" %>
+      </div>
+    </div>        
+  </div>
+  <div class="text-center" style="margin-top: 15%;">
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
