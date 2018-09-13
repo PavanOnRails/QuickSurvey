@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.3.1'
+gem 'bcrypt'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
