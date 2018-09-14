@@ -1,0 +1,51 @@
+<br><br>
+<div class="container">
+	<% @surveys.each do |survey| %>
+	  <strong><%= survey.title %></strong><br>
+
+	  Questions:<br>
+    <% survey.questions.each_with_index do |question,index| %>
+	    <ul>
+	    	<li><%= question.title%></li>&nbsp;&nbsp;
+	    	<div class="answer">
+		    	<%= link_to '#', data: { turbolinks: false}, class: "btn btn-primary btn-sm" do %>
+	          Answer this question
+	        <% end %>
+	        <%= hidden_field_tag "question", question.id, class: "question" %>
+	      </div>
+	      <br>
+        <div class="answer-form-<%=question.id%> hide">
+        	<%= form_for [question, @answer], remote: true do |f| %>
+        	  <div class="form-group">
+					    <div class="row">
+					      <div class="col">
+					        <%= f.text_area :content, autofocus: true, class: 'form-control', placeholder: "Write your answer", required: true %>
+					        <%= f.hidden_field :answered_by, value: current_user.full_name %>
+					      </div>
+					    </div>        
+					  </div>
+					  <div class="text-center" style="margin-top: 2%;">
+					    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+					  </div>
+					<% end %>
+				</div>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
+<style type="text/css">
+	.hide{
+    display: none;
+}
+</style>
+
+<script type="text/javascript">
+	
+		$(".answer").each(function(index){
+			$(this).on("click",function(){
+				var question_id = $(this).find(".question").val()
+        $(".answer-form-"+question_id).toggle();
+			})
+		})
+</script>
