@@ -7,19 +7,23 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+  2.3.7
 
-* Configuration
+* Rails version
+  
+  5.16
 
-* Database creation
+* Steps
+  
+  1. Clone the project
 
-* Database initialization
+  2. Run bundle install
 
-* How to run the test suite
+  3. Run rails db:create and rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+  4. Run rails db:seed
 
-* Deployment instructions
+  5. Run rails s
 
 * ...
 =======
