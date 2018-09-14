@@ -15,4 +15,12 @@ Rails.application.routes.draw do
   	resources :answers
   end
   resources :survey_responses
+
+  namespace :api, defaults: { format: :json } do 
+    namespace :v1 do 
+      resources :surveys do 
+        resources :questions
+      end
+    end 
+  end 
 end

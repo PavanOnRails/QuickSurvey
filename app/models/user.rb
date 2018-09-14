@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
+	has_secure_token
 	attr_accessor :password_confirmation
 	enum user_role: [:survey_taker, :survey_admin]
 

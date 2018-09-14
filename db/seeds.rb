@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #create a survey admin
-User.create(first_name: "Vikas", last_name: "Kumar", email: "vikas@gmail.com", password: "L@mb0rg1n1", user_role: 1)
+User.create(first_name: "Vikas", last_name: "Kumar", email: "vikas@gmail.com", password: "L@mb0rg1n1", user_role: 1, token: "pX27zsMN2ViQKta1bGfLmVJE")
 
 #create some survey takers
-User.create(first_name: "Pavan", last_name: "Kumar", email: "pavan@gmail.com", password: "$C3nt@ur$", user_role: 0)
-User.create(first_name: "Ganga", last_name: "Prasad", email: "ganga.prasad@gmail.com", password: "$P@$$w0rd$", user_role: 0)
+User.create(first_name: "Pavan", last_name: "Kumar", email: "pavan@gmail.com", password: "$C3nt@ur$", user_role: 0, token: "07906c47276da7c016c8b8g3")
+User.create(first_name: "Ganga", last_name: "Prasad", email: "ganga.prasad@gmail.com", password: "$P@$$w0rd$", user_role: 0, token: "056ac229458bb367e739eb7f")
 
 #create some surveys
 Survey.create(title: "Survey on the recent fuel prices", status: 0)
