@@ -24,7 +24,3 @@ Things you may want to cover:
   4. Run rails db:seed
 
   5. Run rails s
-
-* ...
-=======
-# QuickSurvey
